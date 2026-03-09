@@ -1,0 +1,252 @@
+.section {
+  position: relative;
+  padding: 80px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: visible;
+}
+
+/* glow blobs */
+.glowWrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  z-index: 0;
+}
+
+.glowTopLeft,
+.glowBottomRight {
+  position: absolute;
+  width: 220px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.28);
+  filter: blur(36px);
+}
+
+.glowTopLeft {
+  top: 0;
+  left: 50%;
+  transform: translate(calc(-286px - 6px), -32px);
+}
+
+.glowBottomRight {
+  bottom: 0;
+  left: 50%;
+  transform: translate(calc(286px - 214px + 6px), 32px);
+}
+
+.outer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* main card */
+.card {
+  position: relative;
+  width: 100%;
+  max-width: 572px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0.06) 100%
+  );
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* polaroid frame */
+.frame {
+  flex-shrink: 0;
+  position: relative;
+  width: 170px;
+  aspect-ratio: 170 / 191;
+}
+
+.frameInner {
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background-color: #ececeb;
+}
+
+.frameImg {
+  position: absolute;
+  top: 3.7%;
+  left: 4.1%;
+  width: 91.8%;
+  height: 82.2%;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #222;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.frameName {
+  position: absolute;
+  bottom: 5.2%;
+  left: 7%;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgb(27, 27, 27);
+}
+
+/* right side */
+.body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgb(131, 251, 137);
+  box-shadow: 0 0 8px rgb(131, 251, 137);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+.textWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.heading {
+  font-size: 25px;
+  line-height: 1.1;
+  color: #fff;
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.btns {
+  display: flex;
+  gap: 10px;
+  align-self: flex-end;
+  flex-wrap: wrap;
+}
+
+.glassBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 20px 10px 14px;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.10) 0%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
+  backdrop-filter: blur(16px) saturate(160%);
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.glassBtn:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.glassBtnIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.glassBtnIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.glassBtnLabel {
+  line-height: 1;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .card {
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+    max-width: 280px;
+  }
+
+  .frame {
+    width: 92%;
+    max-width: 280px;
+    align-self: center;
+  }
+
+  .body {
+    align-items: center;
+    text-align: center;
+  }
+
+  .btns {
+    align-self: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

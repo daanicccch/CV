@@ -1,0 +1,33 @@
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.bracket {
+  color: var(--accent);
+}
+
+.text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.copy {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
