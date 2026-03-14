@@ -1,5 +1,6 @@
 import { profile } from "../../data/profile";
 import { useReveal } from "../../hooks/useReveal";
+import { getEmailHref } from "../../utils/email";
 import styles from "./CTA.module.css";
 
 export function CTA() {
@@ -59,7 +60,7 @@ export function CTA() {
                     <span className={styles.glassBtnLabel}>Telegram</span>
                   </a>
                   <a
-                    href={`mailto:${profile.email}`}
+                    href={getEmailHref(profile.email)}
                     className={styles.glassBtn}
                   >
                     <span className={styles.glassBtnIcon}>

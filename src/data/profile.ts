@@ -6,7 +6,7 @@ export const profile = {
   telegram: "@daanicccch",
   github: "daanicccch",
   phone: "+375 29 622-13-52",
-  linkedin: "danila-lonsky",
+  linkedin: "daanicccch",
   resumeUrl:
     "https://docs.google.com/document/d/1TSsOeZJvwGnppQqiHrcBS-igNkrjenPgfkHZBr2-0G0/edit?tab=t.0",
   summary:
