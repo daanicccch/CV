@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import { profile } from "../../data/profile";
 import { useReveal } from "../../hooks/useReveal";
 import { SocialLinks } from "../UI/SocialLinks";

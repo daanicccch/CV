@@ -1,0 +1,9 @@
+services:
+  cv-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cv-site
+    restart: unless-stopped
+    ports:
+      - "80:80"

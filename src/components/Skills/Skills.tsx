@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import { skillCategories } from "../../data/profile";
 import { useReveal } from "../../hooks/useReveal";
 import styles from "./Skills.module.css";
