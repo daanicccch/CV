@@ -1,7 +1,7 @@
 export const profile = {
   name: "Danila Lonski",
   title: "Backend Engineer · Node.js / NestJS / TypeScript",
-  location: "Minsk, Belarus",
+
   email: "daanicccch@gmail.com",
   telegram: "@daanicccch",
   github: "daanicccch",
@@ -12,7 +12,7 @@ export const profile = {
   summary:
     "Backend engineer with 2+ years in production. Built 8+ systems from 0 to launch — payments, blockchain, highload gaming (50k+ users, up to 10k tx/day). Led backend teams of 4–6, owned architecture and infra end-to-end. Stack: Node.js / NestJS / TypeScript, microservices, event-driven. Open to remote.",
   about: [
-    "Backend engineer based in Minsk, Belarus — open to remote or relocation. I specialize in building production-ready systems from scratch: microservice architectures, event-driven pipelines, and high-load APIs.",
+    "Backend engineer open to remote or relocation. I specialize in building production-ready systems from scratch: microservice architectures, event-driven pipelines, and high-load APIs.",
     "2+ years of commercial experience across gaming, fintech, and SaaS — shipped 8+ systems to production. Led backend teams of 4–6, owned architecture and infra end-to-end.",
     "Core stack: Node.js / NestJS / TypeScript, microservices with RabbitMQ and Kafka, PostgreSQL + Redis, Docker. I care about clean architecture, DDD, and systems that scale.",
   ],

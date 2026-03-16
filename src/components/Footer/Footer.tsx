@@ -10,7 +10,7 @@ export function Footer() {
             DL
             <span className={styles.bracket}>{"}"}</span>
           </span>
-          <p className={styles.text}>Designed & Built by Danila Lonsky</p>
+          <p className={styles.text}>Designed & Built by Danila Lonski</p>
           <p className={styles.copy}>&copy; {new Date().getFullYear()}. All rights reserved.</p>
         </div>
       </div>
