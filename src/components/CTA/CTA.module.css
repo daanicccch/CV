@@ -44,6 +44,11 @@
   z-index: 1;
 }
 
+.reveal {
+  width: 100%;
+  max-width: 572px;
+}
+
 /* main card */
 .card {
   position: relative;
@@ -241,6 +246,10 @@
 
 /* mobile */
 @media (max-width: 600px) {
+  .reveal {
+    max-width: 280px;
+  }
+
   .card {
     flex-direction: column;
     padding: 30px;
