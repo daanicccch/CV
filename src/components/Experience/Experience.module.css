@@ -1,7 +1,7 @@
 .timeline {
   position: relative;
   padding-left: 32px;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .timeline::before {
@@ -200,7 +200,7 @@
   .item,
   .content {
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   .timeline {
