@@ -175,12 +175,12 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 68px 0 30px;
+    padding: 82px 0 30px;
   }
 
   .cta {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .btnPrimary,

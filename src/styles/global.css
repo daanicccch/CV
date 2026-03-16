@@ -12,6 +12,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -19,6 +21,12 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.7;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
   overflow-x: hidden;
 }
 

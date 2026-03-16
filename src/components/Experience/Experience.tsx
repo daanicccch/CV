@@ -3,7 +3,8 @@ import { useReveal } from "../../hooks/useReveal";
 import styles from "./Experience.module.css";
 
 function TimelineItem({ exp, index }: { exp: typeof experiences[0]; index: number }) {
-  const reveal = useReveal(0.1);
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+  const reveal = useReveal(isMobile ? 0.02 : 0.1);
 
   return (
     <div
@@ -12,8 +13,8 @@ function TimelineItem({ exp, index }: { exp: typeof experiences[0]; index: numbe
       style={{
         opacity: reveal.visible ? 1 : 0,
         transform: reveal.visible ? "none" : "translateY(30px)",
-        transition: "all 0.8s cubic-bezier(0.16,1,0.3,1)",
-        transitionDelay: `${index * 0.15}s`,
+        transition: `all ${isMobile ? "0.5s" : "0.8s"} cubic-bezier(0.16,1,0.3,1)`,
+        transitionDelay: `${isMobile ? index * 0.05 : index * 0.15}s`,
       }}
     >
       <div className={styles.dot} />
@@ -79,7 +80,8 @@ function TimelineItem({ exp, index }: { exp: typeof experiences[0]; index: numbe
 }
 
 export function ExperienceSection() {
-  const title = useReveal();
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+  const title = useReveal(isMobile ? 0.02 : 0.15);
 
   return (
     <section className="section section-alt" id="experience">
@@ -90,7 +92,7 @@ export function ExperienceSection() {
             style={{
               opacity: title.visible ? 1 : 0,
               transform: title.visible ? "none" : "translateY(30px)",
-              transition: "all 0.8s cubic-bezier(0.16,1,0.3,1)",
+              transition: `all ${isMobile ? "0.5s" : "0.8s"} cubic-bezier(0.16,1,0.3,1)`,
             }}
           >
             <span className="section-number">02.</span> Experience
