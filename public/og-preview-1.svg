@@ -1,0 +1,33 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="96" y1="72" x2="1112" y2="558" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A0A0F"/>
+      <stop offset="1" stop-color="#121726"/>
+    </linearGradient>
+    <linearGradient id="title" x1="152" y1="220" x2="612" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5F7FB"/>
+      <stop offset="1" stop-color="#A1A1AA"/>
+    </linearGradient>
+    <linearGradient id="line" x1="152" y1="338" x2="432" y2="338" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#818CF8" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="56" height="56" patternUnits="userSpaceOnUse">
+      <path d="M56 0H0V56" stroke="#6366F1" stroke-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="#090A0F"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <circle cx="170" cy="130" r="120" fill="#6366F1" fill-opacity="0.12"/>
+  <circle cx="1010" cy="500" r="150" fill="#818CF8" fill-opacity="0.08"/>
+  <rect x="92" y="64" width="1016" height="502" rx="34" fill="url(#bg)" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  <rect x="92" y="64" width="1016" height="502" rx="34" fill="url(#grid)"/>
+  <rect x="152" y="128" width="212" height="44" rx="22" fill="#6366F11A" stroke="#6366F147"/>
+  <circle cx="180" cy="150" r="6" fill="#34D399"/>
+  <text x="198" y="156" fill="#A5B4FC" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Available now</text>
+  <text x="152" y="292" fill="url(#title)" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800" letter-spacing="-1.8">Danila Lonski</text>
+  <rect x="152" y="308" width="304" height="4" rx="2" fill="url(#line)"/>
+  <text x="152" y="366" fill="#A1A1AA" font-family="JetBrains Mono, monospace" font-size="28" font-weight="500">Backend Engineer</text>
+  <text x="152" y="422" fill="#A1A1AA" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="400">Node.js / NestJS / TypeScript</text>
+  <text x="882" y="520" fill="#818CF8" font-family="JetBrains Mono, monospace" font-size="22" font-weight="500">daanicccch.tech</text>
+</svg>
