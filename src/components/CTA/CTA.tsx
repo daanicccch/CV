@@ -1,10 +1,12 @@
 import { profile } from "../../data/profile";
 import { useReveal } from "../../hooks/useReveal";
+import { useCopyToClipboard } from "../../hooks/useCopyToClipboard";
 import { getEmailHref } from "../../utils/email";
 import styles from "./CTA.module.css";
 
 export function CTA() {
   const reveal = useReveal(0.15);
+  const { copied, copy } = useCopyToClipboard();
 
   return (
     <section className={styles.section}>
@@ -61,7 +63,11 @@ export function CTA() {
                   </a>
                   <a
                     href={getEmailHref(profile.email)}
-                    className={styles.glassBtn}
+                    className={`${styles.glassBtn} ${copied ? styles.glassBtnCopied : ""}`}
+                    onClick={async (event) => {
+                      event.preventDefault();
+                      await copy(profile.email);
+                    }}
                   >
                     <span className={styles.glassBtnIcon}>
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -69,7 +75,7 @@ export function CTA() {
                         <path d="M2 7l10 7 10-7"/>
                       </svg>
                     </span>
-                    <span className={styles.glassBtnLabel}>Email</span>
+                    <span className={styles.glassBtnLabel}>{copied ? "Copied" : "Email"}</span>
                   </a>
                 </div>
               </div>

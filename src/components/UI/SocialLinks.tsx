@@ -1,4 +1,5 @@
 import { profile } from "../../data/profile";
+import { useCopyToClipboard } from "../../hooks/useCopyToClipboard";
 import { getEmailHref } from "../../utils/email";
 import styles from "./SocialLinks.module.css";
 
@@ -42,6 +43,8 @@ const socials = [
 ];
 
 export function SocialLinks() {
+  const { copied, copy } = useCopyToClipboard();
+
   return (
     <div className={styles.socials}>
       {socials.map((s) => (
@@ -50,8 +53,17 @@ export function SocialLinks() {
           href={s.url}
           target={s.url.startsWith("mailto") ? undefined : "_blank"}
           rel="noopener noreferrer"
-          className={styles.link}
-          aria-label={s.label}
+          className={`${styles.link} ${s.label === "Email" && copied ? styles.linkCopied : ""}`}
+          aria-label={s.label === "Email" && copied ? "Email copied" : s.label}
+          onClick={
+            s.label === "Email"
+              ? async (event) => {
+                  event.preventDefault();
+                  await copy(profile.email);
+                }
+              : undefined
+          }
+          data-copied={s.label === "Email" && copied ? "Copied" : undefined}
         >
           {s.icon}
         </a>

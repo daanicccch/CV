@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { profile } from "../../data/profile";
+import { useCopyToClipboard } from "../../hooks/useCopyToClipboard";
 import { getEmailHref } from "../../utils/email";
 import styles from "./Navbar.module.css";
 
@@ -55,6 +56,7 @@ const actions = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { copied, copy } = useCopyToClipboard();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -124,8 +126,17 @@ export function Navbar() {
                   href={action.href}
                   target={action.href.startsWith("mailto:") ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  className={styles.iconLink}
-                  aria-label={action.label}
+                  className={`${styles.iconLink} ${action.label === "Email" && copied ? styles.iconLinkCopied : ""}`}
+                  aria-label={action.label === "Email" && copied ? "Email copied" : action.label}
+                  data-copied={action.label === "Email" && copied ? "Copied" : undefined}
+                  onClick={
+                    action.label === "Email"
+                      ? async (event) => {
+                          event.preventDefault();
+                          await copy(profile.email);
+                        }
+                      : undefined
+                  }
                 >
                   {action.icon}
                 </a>
@@ -167,8 +178,17 @@ export function Navbar() {
                 href={action.href}
                 target={action.href.startsWith("mailto:") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className={styles.mobileIconLink}
-                aria-label={action.label}
+                className={`${styles.mobileIconLink} ${action.label === "Email" && copied ? styles.iconLinkCopied : ""}`}
+                aria-label={action.label === "Email" && copied ? "Email copied" : action.label}
+                data-copied={action.label === "Email" && copied ? "Copied" : undefined}
+                onClick={
+                  action.label === "Email"
+                    ? async (event) => {
+                        event.preventDefault();
+                        await copy(profile.email);
+                      }
+                    : undefined
+                }
               >
                 {action.icon}
               </a>

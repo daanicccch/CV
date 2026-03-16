@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   gap: 12px;
   padding: 28px 20px;
   background: var(--bg-card);
@@ -34,6 +35,13 @@
   border-color: var(--accent-border);
   background: var(--bg-card-hover);
   transform: translateY(-4px);
+}
+
+.cardCopied {
+  border-color: var(--accent-border);
+  background: var(--bg-card-hover);
+  box-shadow: 0 0 0 1px var(--accent-border), 0 0 24px var(--accent-glow);
+  transform: translateY(-2px) scale(1.01);
 }
 
 .cardIcon {
@@ -58,6 +66,17 @@
   height: 20px;
 }
 
+.cardText {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: center;
+}
+
 .cardLabel {
   font-size: 0.75rem;
   font-weight: 500;
@@ -73,8 +92,57 @@
   font-family: var(--font-mono);
 }
 
+.cardCopied .cardIcon {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.06);
+}
+
 @media (max-width: 768px) {
+  .content {
+    max-width: 420px;
+  }
+
+  .text {
+    margin-bottom: 32px;
+  }
+
   .cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .card {
+    gap: 10px;
+    padding: 20px 12px;
+    min-height: 168px;
+  }
+
+  .cardText {
+    min-height: 48px;
+    gap: 8px;
+  }
+
+  .cardIcon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .cardIcon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .cardValue {
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    min-height: 156px;
+    padding: 18px 10px;
   }
 }

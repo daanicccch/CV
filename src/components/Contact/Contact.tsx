@@ -1,5 +1,6 @@
 import { profile } from "../../data/profile";
 import { useReveal } from "../../hooks/useReveal";
+import { useCopyToClipboard } from "../../hooks/useCopyToClipboard";
 import { getEmailHref } from "../../utils/email";
 import styles from "./Contact.module.css";
 
@@ -50,6 +51,7 @@ const contacts = [
 export function ContactSection() {
   const title = useReveal();
   const content = useReveal(0.1);
+  const { copied, copy } = useCopyToClipboard();
 
   return (
     <section className="section" id="contact">
@@ -88,11 +90,24 @@ export function ContactSection() {
                 href={c.url}
                 target={c.url.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                className={styles.card}
+                className={`${styles.card} ${c.label === "Email" && copied ? styles.cardCopied : ""}`}
+                onClick={
+                  c.label === "Email"
+                    ? async (event) => {
+                        event.preventDefault();
+                        await copy(profile.email);
+                      }
+                    : undefined
+                }
+                aria-label={c.label === "Email" && copied ? "Email copied" : c.label}
               >
                 <div className={styles.cardIcon}>{c.icon}</div>
-                <span className={styles.cardLabel}>{c.label}</span>
-                <span className={styles.cardValue}>{c.value}</span>
+                <div className={styles.cardText}>
+                  <span className={styles.cardLabel}>{c.label}</span>
+                  <span className={styles.cardValue}>
+                    {c.label === "Email" && copied ? "Copied" : c.value}
+                  </span>
+                </div>
               </a>
             ))}
           </div>
